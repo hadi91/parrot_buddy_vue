@@ -1,0 +1,370 @@
+:root {
+  --orange: #ffa64d;
+  --backgroundblue: #3e5974;
+  --lightgrey: #F5F5F5;
+  --yellow: #ffff66;
+  --smileblue: #b3ecff;
+  --templategrey: #5b626d;
+  --navdarkblue: #002633;
+  --turquoise: #40E0D0;
+  --info-box-blue: #353d49;
+}
+
+body {
+  background-color: var(--backgroundblue);
+  margin: 0;
+  padding: 0;
+  color: var(--lightgrey);
+}
+
+#top_navbar {
+  padding: 10px;
+  text-align: center;
+  background-color: var(--navdarkblue);
+  color: var(--lightgrey);
+}
+
+.tabs {
+  text-align: center;
+}
+
+.tablinks:not(:last-of-type) {
+  background: none;
+  border: none;
+  font-size: 15px;
+  padding: 15px;
+  margin: 25px 5px;
+  color: var(--lightgrey);
+}
+
+.tablinks:nth-of-type(2) {
+  margin-left: 30px
+}
+
+.tablinks:hover, .tablinks.active {
+  border-bottom: 2px solid white;
+}
+
+
+/* recent_tab */
+
+.info-box {
+  border: 0.5px solid;
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto 10px auto;
+  background-color: var(--info-box-blue);
+}
+
+.info-box-view > i.icon.smile {
+  font-size: 6em;
+  padding: 20px;
+  margin-top: 10px;
+  color: var(--smileblue);
+  float: left;
+}
+
+.info-box-empty {
+  display: none;
+}
+
+.info-box-empty p {
+  display: inline-block;
+}
+
+.ui.blue.button {
+  width: 60%;
+  margin: 0 0 5px 17px;
+}
+
+.view-buttons {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: var(--backgroundblue);
+  margin-left: 7px;
+  font-size: 12px;
+  color: white;
+}
+
+.treatment-buttons {
+  margin: 0 0 15px 113px;
+}
+
+.info-box-view p {
+  margin: 20px 0 10px 120px;
+  font-size: 16px;
+}
+
+/* info box show */
+
+.info-box-show {
+  text-align: center;
+}
+
+.info-box-show p {
+  font-size: 16px;
+  color: white;
+}
+
+.face-filler > i.smile {
+  color: var(--smileblue);
+}
+
+i.frown {
+  color: var(--orange);
+}
+
+i.meh {
+  color: var(--yellow);
+}
+
+i.battery {
+  font-size: 3.5em;
+  color: var(--templategrey);
+  margin: 0 20px
+}
+
+.treatment-button {
+  border-radius: 10px;
+  background: none;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+}
+
+.treatment-button:hover {
+  background-color: var(--backgroundblue);
+  border: 1px solid var(--backgroundblue);
+}
+
+.face-filler {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  margin: 0 22px 10px 22px;
+  background-color: var(--templategrey);
+}
+
+.face-filler > i.icon {
+  font-size: 4.3em;
+  margin: -9px;
+}
+
+.info-box-show > p {
+  margin: 0 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.info-box-show > p:first-of-type {
+  color: var(--smileblue);
+}
+
+.info-box-show > p:nth-of-type(2) {
+  padding-right: 10px;
+  color: var(--yellow);
+  margin: 0 23px 23px 28px;
+}
+
+.info-box-show > p:last-of-type {
+  padding-right: 10px;
+  color: var(--orange);
+}
+
+
+.info-box-show-after {
+  text-align: left;
+}
+
+.info-box-show-after > p:first-of-type {
+  padding-left: 15px;
+}
+
+.info-box-show-after > p:not(:first-of-type) {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.info-box-show-after > p:nth-of-type(2) {
+  margin-left: 60px;
+  color: var(--smileblue);
+}
+.info-box-show-after > p:nth-of-type(3) {
+  margin: 0 20px 0 43px;
+  color: var(--yellow);
+}
+.info-box-show-after > p:last-of-type {
+  color: var(--orange);
+}
+
+.info-box-show-after > i {
+  margin: 0 20px;
+}
+
+.info-box-show-after > i:first-of-type {
+  margin-left: 40px;
+}
+
+.info-box-show-after > i.full:hover {
+  color: var(--smileblue);
+}
+.info-box-show-after > i.medium:hover {
+  color: var(--yellow);
+}
+.info-box-show-after > i.empty:hover {
+  color: var(--orange);
+}
+
+.treatment-used {
+  margin-top: 25px;
+  padding: 0 15px;
+}
+
+.show-all-button {
+  background: none;
+  border: none;
+  color: var(--turquoise);
+  display: block;
+  margin: 5px auto 0 auto;
+  font-size: 18px;
+}
+
+.ui.form .field > label {
+  color:white;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.done-button {
+  background-color: var(--turquoise);
+  padding: 10px;
+  border-radius: 5px;
+  border:none;
+  margin: 25px 0 10px 76%;
+  color: white;
+}
+
+.done-button > i.star {
+  color: yellow;
+  margin: 0;
+}
+/* settings tab */
+
+.feedback {
+  border: 1px solid #284c5d;
+  border-radius: 5px;
+  background-color: #2e576b;
+}
+
+.feedback p {
+  padding: 0;
+  margin: 0;
+}
+
+.feedback p:first-of-type {
+  font-size: 16px;
+}
+
+.feedback p:nth-of-type(2) > span{
+  color:#00ced1;
+}
+
+.feedback-text {
+padding: 15px 15px 20px 15px;
+margin-left: 90px;
+}
+
+i.icon.comment {
+  font-size: 4em;
+  padding: 15px;
+  margin: 10px;
+  float:left;
+}
+
+.treatment-how {
+  border-radius: 5px 5px 0 0;
+  background-color: var(--navdarkblue);
+  color: grey;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.treatment-shortcuts {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 20px 0;
+  font-weight: 100;
+  font-size: 15px;
+  color: var(--lightgrey);
+}
+tr, th {
+  border-top: 2px solid var(--backgroundblue);
+  font-weight: 100;
+}
+
+tr:first-of-type {
+  border-top: none;
+}
+
+table tr > th:nth-of-type(3) {
+  padding: 5px 0 5px 5px;
+}
+
+table {
+  text-align: left;
+  background-color: #2e576b;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ui.selection.dropdown {
+  min-width: 11em;
+}
+
+.ui.toggle.checkbox label {
+  margin-left: 5px;
+}
+
+.ui.toggle.checkbox input:focus:checked~.box:before,
+.ui.toggle.checkbox input:focus:checked~label:before {
+    background-color: var(--turquoise) !important
+}
+.ui.toggle.checkbox input:checked ~ .box:before,
+.ui.toggle.checkbox input:checked ~ label:before {
+    background-color: var(--turquoise) !important;
+}
+
+.ui.toggle.checkbox .box:before, .ui.toggle.checkbox label:before {
+    background-color: var(--info-box-blue);
+}
+
+#settings_tab {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tabs button:last-of-type {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--turquoise);
+  border: var(--turquoise)
+}
+
+i.icon.print {
+  color: white;
+  padding-left: 5px;
+}
+
+/* --- transition --- */
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

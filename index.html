@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Parrot Buddy</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- TOP NAVBAR -->
+
+    <nav id="top_navbar">
+      <h3>Parrot Buddy</h3>
+    </nav>
+
+    <!-- END OF TOP NAVBAR -->
+
+    <!-- LIST OF TABS -->
+
+    <div class="tabs">
+      <button class="tablinks" @click="isSettings = false">Recent</button>
+      <button class="tablinks">Trends</button>
+      <button class="tablinks" @click="isSettings = true"><i class="setting icon"></i>Settings</button>
+      <button class="tablinks"><i class="print icon"></i></button>
+    </div>
+
+    <!-- END OF LIST TABS -->
+
+    <!-- RECENT TAB -->
+
+    <div id="recent_tab" class="tabcontent">
+      <div class="info-box" v-for="(response, index) in recent_tab_responses" v-show="!isSettings">
+        <div class="info-box-empty">
+          <i class="help circle icon"></i>
+          <p>How was your Friday, November 10?</p>
+        </div>
+
+        <transition name="fade">
+          <div class="info-box-view" @click="toggleInfoBox()" v-show="!displayViewBox">
+            <i class="smile icon"></i>
+            <p>{{ response.date | formatDate }}</p>
+            <button class="ui blue button">{{response.activeLevel}}</button>
+            <div class="treatment-buttons">
+              <button class="view-buttons" v-for="treatment in response.treatment">{{treatment}}</button>
+            </div>
+          </div>
+        </transition>
+
+        <transition name='fade'>
+          <div class="info-box-show" v-show="displayViewBox">
+            <h3>How was {{response.date}}?</h3>
+            <button class="face-filler"><i class="smile icon"></i></button>
+            <button class="face-filler"><i class="meh icon"></i></button>
+            <button class="face-filler"><i class="frown icon"></i></button>
+            <p>GOOD</p>
+            <p>OKAY</p>
+            <p>BAD</p>
+            <div class="info-box-show-after">
+              <p>Were your activities affected?</p>
+              <i class="battery full icon"></i>
+              <i class="battery medium icon"></i>
+              <i class="battery empty icon"></i>
+
+              <p>NO</p>
+              <p>SLOWED<br>DOWN</p>
+              <p>MISSED<br>ACTIVITIES</p>
+
+              <div class="treatment-used">
+                <p>Treatment(s) Used</p>
+                <button class="treatment-button">Maxalt</button>
+                <button class="treatment-button">Cold Shower</button>
+                <button class="treatment-button">Sumatriptan</button>
+                <button class="treatment-button" v-show="isShowAll">Caffeine</button>
+                <button class="treatment-button" v-show="isShowAll">Food</button>
+
+                <button class="show-all-button" @click="isShowAll = !isShowAll" v-show="!isShowAll">Show All...</button>
+                <div class="ui form">
+                  <div class="field">
+                    <label>Notes</label>
+                    <textarea rows="1" placeholder="Your notes"></textarea>
+                  </div>
+                </div>
+
+                <button class="done-button" @click="displayViewBox = !displayViewBox">
+                  <i class="star icon"></i>
+                  Done!
+                </button>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+
+    <!-- END OF RECENT TAB -->
+
+    <!-- TRENDS TAB -->
+
+    <div id="trends_tab" class="tabcontent"></div>
+
+    <!-- END OF TRENDS TAB -->
+
+    <!-- SETTINGS TAB -->
+
+    <div id="settings_tab" class="tabcontent" v-show="isSettings">
+      <div class="feedback">
+        <i class="comment outline icon"></i>
+        <div class="feedback-text">
+          <p>Have some feedback for us?</p>
+          <p><span>Tap here</span> to drop us a note!</p>
+        </div>
+      </div>
+      <button class="treatment-shortcuts"><i class="dropdown icon"></i>Edit Your Treatment Shortcuts</button>
+      <div class="settings-list">
+        <div class="treatment-how">
+          <p><i class="help circle icon"></i>To add a new treatment, use the "Medication" or "Relief" screens</p>
+        </div>
+        <table>
+          <tr>
+            <th></th>
+            <th>Treatment</th>
+            <th>Type</th>
+          </tr>
+          <tr v-for="response in settings_tab_responses">
+            <th>
+              <div class="ui toggle checkbox">
+                <input name="public" type="checkbox">
+              </div>
+            </th>
+            <th>{{response.name}}</th>
+            <th>
+              <div class="ui selection dropdown">
+                <input name="gender" type="hidden">
+                <i class="dropdown icon"></i>
+                <div class="default text">{{response.customType}}</div>
+                <div class="menu">
+                  <div class="item" data-value="1">others</div>
+                  <div class="item" data-value="2">preventative</div>
+                  <div class="item" data-value="3">relief</div>
+                  <div class="item" data-value="4">rescue</div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- END OF SETTINGS TAB -->
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="script.js"></script>
+
+</html>
