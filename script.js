@@ -10,7 +10,6 @@
       },
       mouseOver(){
         this.isFace = !this.isFace;
-        console.log('face');
       }
     },
     filter: {
